@@ -1,0 +1,4 @@
+(set! double (lambda (x)
+               (plus x x)))
+
+(set! even? (l

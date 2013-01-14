@@ -1,0 +1,18 @@
+(set! nil (quote))
+
+
+(set! nil? (lambda (xs)
+             (equals xs nil)))
+
+
+(set! map (lambda (f xs)
+            (if (nil? xs)
+                (quote)
+                (cons (f (head xs)) (map f (tail xs))))))
+
+(set! reduce (lambda (f xs)
+               (if (nil? xs)
+                   (quote)
+                   (if (f (head xs))
+                       (cons (head xs) (reduce f (tail xs)))
+                       (reduce f (tail xs))))))
