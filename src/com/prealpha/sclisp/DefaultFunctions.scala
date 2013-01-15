@@ -8,6 +8,7 @@ object fns {
     }
 
 
+
     val plus = create(plus_fn, "plus")
     def plus_fn(args:LispList): LispObject = args.value match {
         case LispFloating(x) :: LispFloating(y) :: Nil => LispFloating(x+y)
@@ -35,6 +36,16 @@ object fns {
         case _ => throw new LispFunctionException("The two arguments to 'times' must be either floats or integers")
     }
 
+
+    val mod = create(mod_fn, "mod")
+    def mod_fn(args: LispList): LispObject = args.value match {
+        case LispFloating(x) :: LispFloating(y) :: Nil => LispFloating(x%y)
+        case LispFloating(x) :: LispInteger(y)  :: Nil => LispFloating(x%y)
+        case LispInteger(x)  :: LispFloating(y) :: Nil => LispFloating(x%y)
+        case LispInteger(x)  :: LispInteger(y)  :: Nil => LispInteger(x%y)
+        case _ => throw new LispFunctionException("The two arguments to 'mod' must be either floats or integers")
+    }
+
     val quote = create(quote_fn, "quote")
     def quote_fn(args: LispList): LispObject = args
 
@@ -53,6 +64,12 @@ object fns {
     def cons_fn(args:LispList):LispObject = args.value match{
         case (x:LispObject) :: LispList(l) :: Nil => new LispList(x::l)
         case _ => throw new LispFunctionException("Cons takes 1 object and 1 list as parameters")
+    }
+
+    val same_type = create(same_type_fn, "same_type")
+    def same_type_fn(args: LispList):LispObject = args.value match {
+        case (x: LispObject) :: (y: LispObject) :: Nil => if (x.getClass == y.getClass) LispTrue else LispFalse
+        case _ => throw new LispFunctionException("same_type takes two objects")
     }
 
     val print_ln = create(print_ln_fn, "println")

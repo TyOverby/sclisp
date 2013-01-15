@@ -1,4 +1,5 @@
 (set! double (lambda (x)
                (plus x x)))
 
-(set! even? (l
+(set! even? (lambda (x)
+              (if (equals (mod x 2) 0) true false)))

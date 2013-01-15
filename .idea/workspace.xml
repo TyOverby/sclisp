@@ -7,15 +7,15 @@
     <file path="/Lexer.scala" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358149702307" ignored="false" />
     <file path="/Parser.scala" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358154056455" ignored="false" />
     <file path="/LispFunction.scala" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358132383150" ignored="false" />
-    <file path="/DefaultFunctions.scala" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358159648071" ignored="false" />
+    <file path="/DefaultFunctions.scala" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358210707266" ignored="false" />
     <file path="/package.scala" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358136572583" ignored="false" />
     <file path="/fragment.java" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358136375560" ignored="false" />
-    <file path="/LispTypes.scala" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358159588135" ignored="false" />
-    <file path="/Interpreter.scala" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358159343722" ignored="false" />
+    <file path="/LispTypes.scala" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358207775606" ignored="false" />
+    <file path="/Interpreter.scala" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358212802820" ignored="false" />
     <file path="/Tests.sc" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358151409896" ignored="false" />
-    <file path="/stdfun.sclisp" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358160392954" ignored="false" />
+    <file path="/stdfun.sclisp" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358274231899" ignored="false" />
     <file path="/LispException.scala" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358157239119" ignored="false" />
-    <file path="/test.sclisp" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358160459257" ignored="false" />
+    <file path="/test.sclisp" changelist="b52a9d51-2875-475e-8cfa-1f05f700e347" time="1358209231316" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +30,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -64,7 +65,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -81,7 +81,7 @@
       <file leaf-file-name="DefaultFunctions.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/DefaultFunctions.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="53" selection-start="1856" selection-end="1856" vertical-scroll-proportion="0.0">
+            <state line="68" column="17" selection-start="3213" selection-end="3222" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -99,20 +99,35 @@
       <file leaf-file-name="LispTypes.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/LispTypes.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="13" selection-start="952" selection-end="952" vertical-scroll-proportion="0.0">
+            <state line="12" column="52" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Interpreter.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Interpreter.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/Interpreter.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="50" selection-start="3867" selection-end="3867" vertical-scroll-proportion="2.215812">
-              <folding>
-                <element signature="e#29#81#0" expanded="true" />
-                <element signature="e#232#1373#1" expanded="false" />
-              </folding>
+            <state line="150" column="35" selection-start="4522" selection-end="4522" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.sclisp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sclisp/test.sclisp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stdfun.sclisp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sclisp/stdfun.sclisp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="72" selection-start="417" selection-end="417" vertical-scroll-proportion="-1.4285715">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,11 +151,13 @@
         <option value="$PROJECT_DIR$/src/com/prealpha/sclisp/Tests.sc" />
         <option value="$PROJECT_DIR$/src/com/prealpha/sclisp/Parser.scala" />
         <option value="$PROJECT_DIR$/src/com/prealpha/sclisp/LispException.scala" />
-        <option value="$PROJECT_DIR$/src/com/prealpha/sclisp/LispTypes.scala" />
-        <option value="$PROJECT_DIR$/src/com/prealpha/sclisp/DefaultFunctions.scala" />
-        <option value="$PROJECT_DIR$/src/com/prealpha/sclisp/Interpreter.scala" />
         <option value="$PROJECT_DIR$/stdfun.sclisp" />
         <option value="$PROJECT_DIR$/src/test.sclisp" />
+        <option value="$PROJECT_DIR$/src/com/prealpha/sclisp/LispTypes.scala" />
+        <option value="$PROJECT_DIR$/sclisp/test.sclisp" />
+        <option value="$PROJECT_DIR$/src/com/prealpha/sclisp/DefaultFunctions.scala" />
+        <option value="$PROJECT_DIR$/src/com/prealpha/sclisp/Interpreter.scala" />
+        <option value="$PROJECT_DIR$/sclisp/stdfun.sclisp" />
       </list>
     </option>
   </component>
@@ -264,8 +281,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -282,9 +299,9 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -383,6 +400,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -408,19 +438,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -530,8 +547,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24583334" sideWeight="0.6560425" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3439575" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24583334" sideWeight="0.6108898" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38911024" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -599,72 +616,66 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_10/src.zip!/java/lang/Throwable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="375" column="18" selection-start="15698" selection-end="15698" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/Lexer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/package.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="58" selection-start="104" selection-end="104" vertical-scroll-proportion="0.11409396">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/scala/src/scala-library-src.jar!/scala/collection/mutable/ArrayBuffer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="23" selection-start="3030" selection-end="3034" vertical-scroll-proportion="0.5697674">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/scala/src/scala-library-src.jar!/scala/Int.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="7" selection-start="5794" selection-end="5794" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/scala/src/scala-library-src.jar!/scala/collection/immutable/List.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="6" selection-start="4010" selection-end="4010" vertical-scroll-proportion="0.33261803">
-          <folding />
-        </state>
+        <state line="96" column="6" selection-start="4010" selection-end="4010" vertical-scroll-proportion="0.33261803" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Sclisp.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files (x86)/scala/src/scala-library-src.jar!/scala/io/Source.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="6" selection-start="1726" selection-end="1726" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="52" column="6" selection-start="1726" selection-end="1726" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/Tests.sc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="19" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0787037">
-          <folding />
-        </state>
+        <state line="2" column="19" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0787037" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/LispException.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="100" selection-start="448" selection-end="448" vertical-scroll-proportion="0.2905983">
+        <state line="8" column="100" selection-start="448" selection-end="448" vertical-scroll-proportion="0.2905983" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/scala/src/scala-library-src.jar!/scala/package.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="7" selection-start="3797" selection-end="3797" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/scala/src/scala-library-src.jar!/scala/math/Numeric.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="186" column="6" selection-start="8223" selection-end="8223" vertical-scroll-proportion="6.5384617" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/scala/src/scala-library-src.jar!/scala/SpecializableCompanion.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="30" selection-start="675" selection-end="675" vertical-scroll-proportion="0.2542735" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/scala/src/scala-library-src.jar!/scala/AnyValCompanion.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="53" selection-start="952" selection-end="952" vertical-scroll-proportion="0.508547" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/scala/src/scala-library-src.jar!/scala/Int.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="23" selection-start="5810" selection-end="5810" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/DefaultFunctions.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="17" selection-start="3213" selection-end="3222" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/LispTypes.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="52" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -676,34 +687,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/DefaultFunctions.scala">
+    <entry file="file://$PROJECT_DIR$/sclisp/test.sclisp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="53" selection-start="1856" selection-end="1856" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sclisp/stdfun.sclisp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="0.21794872">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/LispTypes.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="952" selection-end="952" vertical-scroll-proportion="0.0">
+        <state line="5" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/prealpha/sclisp/Interpreter.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="50" selection-start="3867" selection-end="3867" vertical-scroll-proportion="2.215812">
-          <folding>
-            <element signature="e#29#81#0" expanded="true" />
-            <element signature="e#232#1373#1" expanded="false" />
-          </folding>
+        <state line="150" column="35" selection-start="4522" selection-end="4522" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sclisp/stdfun.sclisp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="72" selection-start="417" selection-end="417" vertical-scroll-proportion="-1.4285715">
+          <folding />
         </state>
       </provider>
     </entry>

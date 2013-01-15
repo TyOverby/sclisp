@@ -55,14 +55,20 @@ class Environment(parent: Option[Environment] = None, v_args: List[(LispObject,L
 class GlobalEnv extends Environment{
     this.set("print", print_)
     this.set("println", print_ln)
+
     this.set("plus", plus)
     this.set("minus", minus)
     this.set("equals", is_equal)
     this.set("times", times)
+    this.set("mod", mod)
+
     this.set("quote", quote)
     this.set("head", head)
     this.set("cons", cons)
     this.set("tail", tail)
+
+    this.set("same_type", same_type)
+
     this.set("exit", exit)
     this.set("quit", exit)
 }
@@ -75,7 +81,7 @@ object Interpreter {
                 case LispOperation("import") :: others => {
                     new LispList(others.filter(_.isInstanceOf[LispString]).map(_.asInstanceOf[LispString]).map(_.value).flatMap(
                         x=> {
-                            val f = Source.fromFile(x + ".sclisp");
+                            val f = Source.fromFile("sclisp/"+x + ".sclisp");
                             val r = Parser.parse(Lexer.lex(f)).map(run(_,env))
                             f.close()
                             r
@@ -108,7 +114,7 @@ object Interpreter {
                     ret
                 }
 
-                case r@LispValue() :: Nil => r.head
+                //case r@LispValue() :: Nil => r.head
 
                 case _ => {
                     val exps = for (exp <- x) yield run(exp,env)
@@ -134,11 +140,17 @@ object Runner extends App{
     }
 
     val globalEnv = new GlobalEnv
+    def r(program: String):String = {
+        transform(Parser.parse(Lexer.lex(program))
+            .map(Interpreter.run(_,globalEnv)))
+    }
+
+    r("(import \"stdfun\")")
     while(true){
         try{
+
             print("\n>>  ")
-            print("\n##  " + transform(Parser.parse(Lexer.lex(readLine))
-                                             .map(Interpreter.run(_,globalEnv))))
+            print("\n##  " + r(readLine))
         }
         catch{
             case LispException(m) => System.err.println(m)

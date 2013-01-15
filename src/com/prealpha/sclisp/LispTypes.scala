@@ -10,8 +10,10 @@ case class LispOperation(value: String) extends LispObject
 
 abstract case class LispValue() extends LispObject
 
-case class LispInteger(value: Int) extends LispValue
-case class LispFloating(value: Double) extends LispValue
+case class LispNumber[A](value: A) extends LispValue
+case class LispInteger(v: Int) extends LispNumber[Int](v)
+case class LispFloating(v: Double) extends LispNumber[Double](v)
+
 case class LispString(value: String) extends LispValue {
     override def toString = "\"" + value + "\""
 }

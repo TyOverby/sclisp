@@ -4,15 +4,73 @@
 (set! nil? (lambda (xs)
              (equals xs nil)))
 
+(set! last (lambda (xs)
+             (if (nil? (tail xs))
+               (head xs)
+               (last (tail xs)))))
+
+(set! init (lambda (xs)
+             (if (nil? (tail xs))
+               nil
+               (cons
+                 (head xs)
+                 (init (tail xs))))))
+
+(set! concat (lambda (xs ys)
+               (if (nil? xs)
+                 ys
+                 (cons
+                   (head xs)
+                   (concat (tail xs) ys) ))))
+
+(set! append (lambda (xs y)
+               (if (nil? xs)
+                 (cons y nil)
+                 (cons
+                   (head xs)
+                   (append (tail xs) y)))))
+
+(set! not (lambda (p)
+            (if p false true)))
+
+(set! or (lambda (p r)
+           (if p true r)))
+
+(set! and (lambda (p r)
+            (if p r false)))
+
+(set! xor (lambda (p r)
+            (if p (not r) r)))
+
 
 (set! map (lambda (f xs)
             (if (nil? xs)
                 (quote)
                 (cons (f (head xs)) (map f (tail xs))))))
 
-(set! reduce (lambda (f xs)
+(set! filter (lambda (f xs)
                (if (nil? xs)
                    (quote)
                    (if (f (head xs))
-                       (cons (head xs) (reduce f (tail xs)))
-                       (reduce f (tail xs))))))
+                       (cons (head xs) (filter f (tail xs)))
+                       (filter f (tail xs))))))
+
+(set! fold-right (lambda (start f xs)
+                  (if (nil? xs)
+                    start
+                    (fold-right (f start (head xs)) f (tail xs)))))
+
+(set! + (lambda (xs) (fold-right 0 plus xs)))
+(set! - (lambda (xs) (fold-right 0 minus xs)))
+(set! * (lambda (xs) (fold-right 1 times xs)))
+(set! = (lambda (x y) (equals x y)))
+
+(set! range (lambda (start end)
+              (if (= start end)
+                nil
+                (cons start (range (plus start 1) end)))))
+
+(set! range-to (lambda (end) (range 0 end)))
+
+(set! with-file (lambda (file func)
+                  (do (import file) func)))
