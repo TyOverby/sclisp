@@ -78,14 +78,18 @@ object Interpreter {
         node match {
             case LispOperation(x) => env(x)
             case LispList(x) => x match {
-                case LispOperation("import") :: others => {
-                    new LispList(others.filter(_.isInstanceOf[LispString]).map(_.asInstanceOf[LispString]).map(_.value).flatMap(
-                        x=> {
-                            val f = Source.fromFile("sclisp/"+x + ".sclisp");
-                            val r = Parser.parse(Lexer.lex(f)).map(run(_,env))
-                            f.close()
-                            r
-                        }))
+                case LispOperation("import") :: LispString(s) :: Nil => {
+                  val file = Source.fromFile("sclisp/"+s+".sclisp")
+                  val r = Parser.parse(Lexer.lex(file)).map(m=>run(m,env))
+                  file.close()
+                  new LispList(r)
+//                    new LispList(others.filter(_.isInstanceOf[LispString]).map(_.asInstanceOf[LispString]).map(_.value).flatMap(
+//                        x=> {
+//                            val f = Source.fromFile("sclisp/"+x + ".sclisp");
+//                            val r = Parser.parse(Lexer.lex(f)).map(run(_,env))
+//                            f.close()
+//                            r
+//                        }))
 
 
                 }
@@ -101,17 +105,15 @@ object Interpreter {
                 case LispOperation("define") :: LispOperation(s) :: exp :: Nil  =>
                     env.define(s,run(exp, env))
 
-                case LispOperation("lambda") :: LispList(args) :: exp :: Nil =>
+                case LispOperation("lambda") :: LispList(args) :: exp :: Nil =>{
                     new LispFunction("lambda") {
-                        def apply(ar: LispList):LispObject = run(exp, new Environment(Option(env), args.zip(ar.value)))
+                        def apply(ar: LispList):LispObject = run(exp, new Environment(Some(env), args.zip(ar.value)))
                     }
+                }
 
                 case LispOperation("do") :: others => {
-                    var ret: LispObject = null
-                    for (v <- others){
-                        ret = run(v, env)
-                    }
-                    ret
+                    //val localEnv = new Environment(Some(env),Nil)
+                    others.map(o=> run(o, env)).last
                 }
 
                 //case r@LispValue() :: Nil => r.head

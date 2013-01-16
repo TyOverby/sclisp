@@ -68,6 +68,24 @@
                        (cons (head xs) (filter f (tail xs)))
                        (filter f (tail xs))))))
 
+<<<<<<< HEAD
+=======
+(comment "takes the first n from the list xs.  Crashes if xs.length < n")
+(set! take (lambda (n xs)
+             (if (= n 0)
+               nil
+               (cons
+                 (head xs)
+                 (take (minus n 1) (tail xs))))))
+
+(comment "takes the first n from the list xs.  If there aren't n elements in xs, return xs")
+(set! take! (lambda (n xs)
+             (if (or (nil? xs) (= n 0))
+               nil
+               (cons
+                 (head xs)
+                 (take! (minus n 1) (tail xs))))))
+>>>>>>> 3837ec3289ca83ca29f070069a8bf1f1d4128ddb
 
 (set! fold-right (lambda (start f xs)
                   (if (nil? xs)
@@ -94,6 +112,12 @@
 (set! range-to (lambda (end) (range 0 end)))
 
 (set! with-file (lambda (file func)
+<<<<<<< HEAD
                   (do (import file) func)))
 
 
+=======
+                  (do
+                    (import file)
+                    func) ))
+>>>>>>> 3837ec3289ca83ca29f070069a8bf1f1d4128ddb
