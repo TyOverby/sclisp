@@ -1,5 +1,6 @@
-(set! nil (quote))
+(set! comment (lambda (s) nil ))
 
+(set! nil (quote))
 
 (set! nil? (lambda (xs)
              (equals xs nil)))
@@ -55,6 +56,22 @@
                        (cons (head xs) (filter f (tail xs)))
                        (filter f (tail xs))))))
 
+(comment "takes the first n from the list xs.  Crashes if xs.length < n")
+(set! take (lambda (n xs)
+             (if (= n 0)
+               nil
+               (cons
+                 (head xs)
+                 (take (minus n 1) (tail xs))))))
+
+(comment "takes the first n from the list xs.  If there aren't n elements in xs, return xs")
+(set! take! (lambda (n xs)
+             (if (or (nil? xs) (= n 0))
+               nil
+               (cons
+                 (head xs)
+                 (take! (minus n 1) (tail xs))))))
+
 (set! fold-right (lambda (start f xs)
                   (if (nil? xs)
                     start
@@ -73,4 +90,6 @@
 (set! range-to (lambda (end) (range 0 end)))
 
 (set! with-file (lambda (file func)
-                  (do (import file) func)))
+                  (do
+                    (import file)
+                    func) ))
