@@ -1,14 +1,19 @@
+(set! comment (lambda (string) (quote)))
+
+(comment "nil is the tail of a list.  It is represented by the empty list.")
 (set! nil (quote))
 
-
+(comment "nil? returns true if the argument passed into it is nil: the empty list")
 (set! nil? (lambda (xs)
              (equals xs nil)))
 
+(comment "last returns the last element in the list")
 (set! last (lambda (xs)
              (if (nil? (tail xs))
                (head xs)
                (last (tail xs)))))
 
+(comment "init returns all elements in the list except for the last one")
 (set! init (lambda (xs)
              (if (nil? (tail xs))
                nil
@@ -16,6 +21,7 @@
                  (head xs)
                  (init (tail xs))))))
 
+(comment "concat returns a list built out of multiple other lists")
 (set! concat (lambda (xs ys)
                (if (nil? xs)
                  ys
@@ -23,6 +29,7 @@
                    (head xs)
                    (concat (tail xs) ys) ))))
 
+(comment "append returns a list with an item appended")
 (set! append (lambda (xs y)
                (if (nil? xs)
                  (cons y nil)
@@ -30,24 +37,30 @@
                    (head xs)
                    (append (tail xs) y)))))
 
+(comment "logical not")
 (set! not (lambda (p)
             (if p false true)))
 
+(comment "logical or")
 (set! or (lambda (p r)
            (if p true r)))
 
+(comment "logical and")
 (set! and (lambda (p r)
             (if p r false)))
 
+(comment "logical xor")
 (set! xor (lambda (p r)
             (if p (not r) r)))
 
 
+(comment "map returns a copy of xs with the function f applied to each element in the list")
 (set! map (lambda (f xs)
             (if (nil? xs)
                 (quote)
                 (cons (f (head xs)) (map f (tail xs))))))
 
+(comment "filter returns a list for which f(element) is true")
 (set! filter (lambda (f xs)
                (if (nil? xs)
                    (quote)
@@ -55,22 +68,32 @@
                        (cons (head xs) (filter f (tail xs)))
                        (filter f (tail xs))))))
 
+
 (set! fold-right (lambda (start f xs)
                   (if (nil? xs)
                     start
                     (fold-right (f start (head xs)) f (tail xs)))))
+
+(set! flatten (lambda (xs builder)
+                (if (nil? xs)
+                  builder
+                  (flatten (tail xs) (concat builder (head xs))))))
 
 (set! + (lambda (xs) (fold-right 0 plus xs)))
 (set! - (lambda (xs) (fold-right 0 minus xs)))
 (set! * (lambda (xs) (fold-right 1 times xs)))
 (set! = (lambda (x y) (equals x y)))
 
+(comment "range produces a list of integers from start (inclusive) to end (exclusive)")
 (set! range (lambda (start end)
               (if (= start end)
                 nil
                 (cons start (range (plus start 1) end)))))
 
+(comment "see range, but with a default start value of 0")
 (set! range-to (lambda (end) (range 0 end)))
 
 (set! with-file (lambda (file func)
                   (do (import file) func)))
+
+

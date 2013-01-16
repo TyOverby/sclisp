@@ -67,7 +67,7 @@ class GlobalEnv extends Environment{
     this.set("cons", cons)
     this.set("tail", tail)
 
-    this.set("same_type", same_type)
+    this.set("same-type", same_type)
 
     this.set("exit", exit)
     this.set("quit", exit)
